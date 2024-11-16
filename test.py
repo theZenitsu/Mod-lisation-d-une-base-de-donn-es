@@ -6,7 +6,7 @@ from models import Base, Ville, Annonce, Equipement, AnnonceEquipement
 import os
 
 # Database URL (adjust as needed)
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:karzal@localhost:5432/immobilier_db")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:@localhost:5432/immobilier_db")
 
 # Set up the engine and session
 engine = create_engine(DATABASE_URL)
@@ -83,24 +83,12 @@ if __name__ == "__main__":
     get_annonces_by_city('Paris')
     print("\n")
 
-    print("2. Annonces avec au moins 3 pièces et 2 salles de bain:")
-    filter_annonces_by_rooms_and_baths(3, 2)
-    print("\n")
-
-    print("3. Annonces entre 250000 et 400000 euros:")
-    filter_annonces_by_price(250000, 400000)
-    print("\n")
-
     print("4. Annonces avec l'équipement 'Balcon':")
     get_annonces_with_equipement('Balcon')
     print("\n")
 
     print("5. Nombre d'annonces par ville:")
     count_annonces_by_city()
-    print("\n")
-
-    print("6. Annonces avec une surface entre 60 et 100 m²:")
-    find_annonces_by_surface(60, 100)
     print("\n")
 
     print("7. Annonces publiées entre 2024-05-01 et 2024-06-30:")

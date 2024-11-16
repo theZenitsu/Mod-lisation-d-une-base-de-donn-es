@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:karzal@localhost:5432/immobilier_db")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:@localhost:5432/immobilier_db")
 engine = create_engine(DATABASE_URL)
 Base = declarative_base()
 
